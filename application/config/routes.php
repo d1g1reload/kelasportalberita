@@ -1,5 +1,6 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -49,6 +50,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'welcome';
+$route['default_controller'] = 'Auth/login';
+$route['login'] = 'Auth/login';
+
+$route['submit/login'] = 'Auth/submit_login';
+$route['dashboard'] = 'Dashboard/index';
+
+//category
+$route['category'] = 'Category/index';
+$route['category/submit'] = 'Category/submit';
+$route['category/update'] = 'Category/update';
+$route['category/delete/(:any)'] = 'Category/delete/$1';
+
+//news
+$route['news'] = 'News/index';
+$route['news/create'] = 'News/create';
+$route['news/submit'] = 'News/submit';
+$route['news/edit/(:any)'] = 'News/edit/$1';
+$route['news/update'] = 'News/update';
+$route['news/delete/(:any)'] = 'News/delete/$1';
+
+//setting
+$route['setting/api'] = 'Setting/api';
+$route['setting/logout'] = 'Setting/logout';
+
+//api
+$route['api/news/headline'] = 'News_api/headlines';
+$route['api/news/random'] = 'News_api/get_random_list';
+
 $route['404_override'] = '';
-$route['translate_uri_dashes'] = FALSE;
+$route['translate_uri_dashes'] = false;
